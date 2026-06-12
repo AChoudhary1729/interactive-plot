@@ -46,4 +46,11 @@ A_grid = Acoef[:, np.newaxis]
 terms = A_grid * np.cos(lam_grid * X_grid) * np.exp(-(lam_grid**2) * tau)
 Theta = np.sum(terms, axis=0)
 
-fig1 = go.
+fig1 = go.Figure()
+fig1.add_trace(go.Scatter(
+    x=X, 
+    y=Theta, 
+    mode='lines', 
+    line=dict(color='darkgreen', width=3),
+    name="Temperature Profile"
+))
